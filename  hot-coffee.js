@@ -1,19 +1,28 @@
 // hot-coffee.js
-const hotCoffeeContainer = document.querySelector("#hot-coffee-container");
 
-// Function to fetch and display hot coffee data
-async function fetchHotCoffeeData() {
-    try {
-        const response = await fetch("https://api.sampleapis.com/coffee/hot");
-        const data = await response.json();
-
-        // Display the data on the page
-        // Customize the code to format and display the data as per your requirements
-        hotCoffeeContainer.innerHTML = JSON.stringify(data, null, 2);
-    } catch (error) {
-        console.error("Error fetching hot coffee data:", error);
-    }
-}
-
-// Call the fetchHotCoffeeData function when the page loads
-window.addEventListener("load", fetchHotCoffeeData);
+// Create a function to fetch and render content
+function fetchAndRenderContent() {
+    // Fetch data from your API or source
+    fetch('https://api.sampleapis.com/coffee/hot')
+      .then((response) => response.json())
+      .then((data) => {
+        // Create and populate your content
+        const content = document.createElement('div');
+        content.innerHTML = `
+          <h2>Hot Coffee</h2>
+          <p>Description: ${data.description}</p>
+          <!-- Add more content as needed -->
+        `;
+  
+        // Get the container element and append the content
+        const container = document.querySelector('.container');
+        container.appendChild(content);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }
+  
+  // Call the fetchAndRenderContent function when the page loads
+  window.addEventListener('load', fetchAndRenderContent);
+  
