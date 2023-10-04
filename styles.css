@@ -1,0 +1,43 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply black and white theme */
+body {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text color */
+    font-family: Arial, sans-serif; /* Choose a suitable font-family */
+}
+
+header {
+    background-color: #000; /* Black header background */
+    color: #fff; /* White text color for the header */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #000; /* Black link color */
+}
+
+/* Style your content as needed */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Add more styles for specific elements as necessary */
